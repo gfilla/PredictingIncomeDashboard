@@ -1,17 +1,18 @@
-# Bank Loan Predictions
-This repository has demo materials for building a scikit-learn model, deploying it with Watson Machine Learning, and visualizing it with a Shiny dashboard.
+# Predicting Adult Income
+This repository has demo materials for building a SPSS Modeler model, deploying it with Watson Machine Learning, and visualizing it with a Shiny dashboard.
 
 ### Contents:
 
-- /notebook - [Using Sciki-learn and Watson Machine Learning to deploy a random forest model](https://github.com/gfilla/BankLoanPrediction/blob/master/notebook/Bank%20Marketing%20Modeling%20-%20RF%20Deploy.ipynb)
-- /dashboard - [R scripts to call the deployed model in a dashboard](https://github.com/gfilla/BankLoanPrediction/tree/master/dashboard)
-- /sample_data - [Extra data to test geospatial visualizations, not used in the project](https://github.com/gfilla/BankLoanPrediction/tree/master/sample_data)
+- [0. Lab Instructions](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/0.%20Lab%20Instructions) - PDF guide to building a SPSS Modeler Model
+- [1. Modeler Flow](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/1.%20Modeler%20flow) - a Modeler stream file that can be loaded instead of building with instructions
+- [2. Dashboard](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/2.%20Dashboard) - Materials needed to create an R Shiny dashboard to visualize the deployed model
 
 ---
-## Building the Modeling
 
-https://github.com/gfilla/BankLoanPrediction/blob/master/notebook/Bank%20Marketing%20Modeling%20-%20RF%20Deploy.ipynb
+## Building the Modeler Flow
 
+- [Follow the Lab Instructions to create a flow](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/0.%20Lab%20Instructions) 
+- [Use a pre-built Modeler Flow](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/1.%20Modeler%20flow)
 
 
 ## Running the Dashboard
