@@ -1,11 +1,6 @@
 renderValueBox({
-  probs <- toPredict()[[1]]
-  prob_no <- paste0(round(as.numeric(probs$probability_no), 4)*100)
-  prob_yes <- paste0(round(as.numeric(probs$probability_yes), 4)*100)
+  results <- toPredict()[[1]]
   
-  valueBox(value =  prob_no,
-           color = ifelse(prob_no > prob_yes, "warning", "grey"),
-           icon = icon('balance-scale')
-  )
+  valueBox(value =  strtrim(results$`$NC-PREDICTION`, 4))
   
-}) 
+})

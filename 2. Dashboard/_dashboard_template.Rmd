@@ -1,19 +1,19 @@
 ---
-title: "Loan Predictions Dashboard"
+title: "Income Predictions Dashboard"
 runtime: shiny
 output: 
   flexdashboard::flex_dashboard:
     orientation: rows
     vertical_layout: fill
-    source_code: https://github.com/gfilla/BankLoanPrediction/
-    social: [ "twitter", "facebook", "linkedin" ]
+    source_code: https://github.com/gfilla/PredictingIncomeDashboard
+
 
     
 ---
 
 ```{r setup, include=FALSE}
 
-#install_config.r
+# install_config.r
 
 ```
 
@@ -23,7 +23,7 @@ Predictive Model Evaluation
 Row  {.sidebar data-width=350}
 -----------------------------------------------------------------------
 
-### Customer Attributes and Prediction
+### Demographic Information for Prediction
 
 ```{r}
 
@@ -35,20 +35,25 @@ Row  {.sidebar data-width=350}
 Row {data-height=150}
 -----------------------------------------------------------------------
 
-### Predicted probability of Yes Loan
+### Predicted Class (Income in USD)
 
 ```{r}
 
+
 #valueBox1.r
+
+
 
 ```
 
 
-### Predicted probability of No Loan
+### Probability of predicted class
 
 ```{r}
 
 #valueBox2.r
+
+
 
 ```
 
