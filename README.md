@@ -3,16 +3,23 @@ This repository has demo materials for building a SPSS Modeler model, deploying 
 
 ### Contents:
 
-- [0. Lab Instructions](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/0.%20Lab%20Instructions) - PDF guide to building a SPSS Modeler Model
-- [1. Modeler Flow](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/1.%20Modeler%20flow) - a Modeler stream file that can be loaded instead of building with instructions
-- [2. Dashboard](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/2.%20Dashboard) - Materials needed to create an R Shiny dashboard to visualize the deployed model
+- [Lab Instructions](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/0.%20Lab%20Instructions) - PDF guide to building a SPSS Modeler Model
+- [Modeler Flow](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/1.%20Modeler%20flow) - a Modeler stream file that can be loaded instead of building with instructions
+- [Dashboard](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/2.%20Dashboard) - Materials needed to create an R Shiny dashboard to visualize the deployed model
+
 
 ---
 
+## Finding the dataframe
+
+- First log in to your account: https://datascience.ibm.com/
+- Go
 ## Building the Modeler Flow
 
-- [Follow the Lab Instructions to create a flow](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/0.%20Lab%20Instructions) 
+- [Follow the Lab Instructions to create a flow](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/0.%20Lab%20Instructions)
 - [Use a pre-built Modeler Flow](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/1.%20Modeler%20flow)
+
+
 
 
 ## Running the Dashboard
