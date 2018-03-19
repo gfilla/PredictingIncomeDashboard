@@ -33,10 +33,6 @@ selectInput("JOB", "Select occupation:",
 actionButton("getPrediction", "Submit Record to Watson Machine Learning", color="orange")
 
 toPredict <- eventReactive(input$getPrediction, {
-  watson_ml_creds_url      <- 'https://ibm-watson-ml.mybluemix.net'
-  watson_ml_creds_username <- "bc5e19f8-338c-46d0-96dc-0bb9bede2bff"
-  watson_ml_creds_password <- "817de803-0682-4e30-894f-5d18fada9cc6"
-  scoring_url <- 'https://ibm-watson-ml.mybluemix.net/v3/wml_instances/b8bbab83-104b-4a7c-ad09-300ff9d2f1a1/published_models/7541a821-1c06-4feb-9eb4-9ebf70bb3ec8/deployments/0ea8d964-3a10-4522-b7d7-9df00b3885dd/online'
   
   watson_ml_creds_auth_headers <- get_wml_auth_headers(watson_ml_creds_url, watson_ml_creds_username,watson_ml_creds_password)
   case = head(data,n=1)# dummy data for all fields - then replace fields with user input data
