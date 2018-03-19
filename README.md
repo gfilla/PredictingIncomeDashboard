@@ -13,7 +13,6 @@ This repository has demo materials for building a SPSS Modeler model, deploying 
 
 ## Building the Modeler Flow and deploying your model
 
-- Now with the data set added to your project, go inside the project to create a SPSS Modeler flow
 - Follow [the Lab Instructions](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/Lab%20Instructions) to create a flow and deploy the model.
   - You can also [use a pre-built Modeler flow](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/Modeler%20flow)
   - *Note* - if using the pre-built flow, the lab instructions are still needed to save the model and create a deployment
