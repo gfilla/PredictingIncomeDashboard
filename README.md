@@ -10,51 +10,74 @@ This repository has demo materials for building a SPSS Modeler model, deploying 
 
 ---
 
-## Finding the dataframe
 
-- First log in to your account: https://datascience.ibm.com/
-- Go
-## Building the Modeler Flow
+## Building the Modeler Flow and deploying your model
 
-- [Follow the Lab Instructions to create a flow](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/0.%20Lab%20Instructions)
-- [Use a pre-built Modeler Flow](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/1.%20Modeler%20flow)
-
+- Now with the data set added to your project, go inside the project to create a SPSS Modeler flow
+- Follow [the Lab Instructions](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/Lab%20Instructions) to create a flow and deploy the model.
+  - You can also [use a pre-built Modeler flow](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/Modeler%20flow)
+  - *Note* - if using the pre-built flow, the lab instructions are still needed to save the model and create a deployment
 
 
 
 ## Running the Dashboard
 
-### Load R.zip to your RStudio - Managing dependencies
+- Open RStudio from the top navigation
 
-0. [Get a Data Science Experience account (it's free!)](https://datascience.ibm.com/)
-1. [Download the R.zip here](https://ibm.box.com/shared/static/fd8vgznfuv3x6rrx65vnxh4sj2chd7la.zip).
-2. In your RStudio environment click `Upload`  then select the R.zip
-<img src="https://github.com/gfilla/BankLoanPrediction/blob/master/img/upload.png" width= 400>
+![rstudio](https://github.com/gfilla/PredictingIncomeDashboard/blob/master/img/rstudio.png?raw=true)
 
-Note: This will take some time to complete
+- When RStudio opens, run this R command to close this repository:
+```r
+# clone this repository to your RStudio
+system("git clone https://github.com/gfilla/PredictingIncomeDashboard.git")
+```
 
-3. Click yes to the prompt about overwriting (unless you have R packages in your R directory you need to keep)
+- Now you have all the files in this repo copied to your RStudio directory. Run the following R command to install packages required for the dashboard to run:
 
-<img src="https://github.com/gfilla/BankLoanPrediction/blob/master/img/yes.png" width= 350>
+```r
+# find the R markdown file and run
+source("PredictingIncomeDashboard/Dashboard/requirements.r")
 
-4. Restart R!
-<img src="https://github.com/gfilla/BankLoanPrediction/blob/master/img/restart.png" width= 300>
 
+```
 
-Now you are using the same package versions I used when developing the dashboard.
+The dependencies we need to install:
+-  [`flexdashboard`](https://github.com/rstudio/flexdashboard)- created by RStudio to make it easy to build dashboards quickly using Shiny
+- [`R4WML`](https://github.com/Davin-IBM/R4WML) - a great package written by [Davin Shearer](https://github.com/Davin-IBM) at IBM that makes it simple to score WML deployed models using R
+
+- Now to run the dashboard, execute this command:
+
+```r
+# find the R markdown file and run
+rmarkdown::run("PredictingIncomeDashboard/Dashboard/income_prediction_dashboard.Rmd")
+
+```
+
+This is a fully working dashboard.  To learn how this was built, follow the steps below.
 
 ---
 
-### Commands to run dashboard:
+## Building the Dashboard
 
-```r
-# clone this repository to your RStudio
-system("git clone https://github.com/gfilla/BankLoanPrediction.git")
+If you followed the steps above, you now have all the materials of this repository cloned in your RStudio environment.
 
-# find the R markdown file and run
-rmarkdown::run("BankLoanPrediction/dashboard/bankPredictionWML.Rmd")
+Inside the `Dashboard` folder, you will find a number of R files to help you build the dashboard.  Use these files in the following order to help you create the full dashboard:
 
-```
+- **Dashboard/dashboard_template.RMD** - This file is the foundation for your dashboard.  It has the layout in place and needs to be populated with chunks of R code
+- **Dashboard/*.r files** - All the `R` files in the directory are short scripts that can be copied and pasted inside the dashboard template to add in functionality.  The template specifies which script should be copied in each section.
+
+The only R script that needs to be edited is the `install_config.r` file.  For this file, follow these steps:
+
+- First, obtain the credentials for your Watson Machine Learning service from IBM Cloud.  
+- Go to [IBM Cloud](https://console.ng.bluemix.net/) and log in
+- Click the three lines (hamburger) menu in the top left then click **Dashboard** to see your IBM Cloud services
+- Open Watson Machine Learning and find your credentials:
+
+![WML Creds](https://github.com/gfilla/PredictingIncomeDashboard/blob/master/img/getcreds.png?raw=true)
+
+- From here you can copy the WML Username and Password required for the `install_config.r` script
+
+To find the scoring_url for your deployed model, please follow [the Lab Instructions](https://github.com/gfilla/PredictingIncomeDashboard/tree/master/Lab%20Instructions)
 
 ---
 
@@ -62,6 +85,7 @@ rmarkdown::run("BankLoanPrediction/dashboard/bankPredictionWML.Rmd")
 
 1. Add new tab to the dashboard called `Data` with a view of the dataframe `testScores`
 2. Replace the JSON output with visualization of your choice
+3. Train a new model and update the dashboard to score with this model
 
 ---
 
@@ -69,7 +93,7 @@ rmarkdown::run("BankLoanPrediction/dashboard/bankPredictionWML.Rmd")
 
 1. Check out renderDataTable
 2. Start by duplicating the viz in the demo and check out this [Plotly book](https://plotly-book.cpsievert.me/) to help find interesting plots
-
+3. The scoring_url is the unique part of our dashboard that integrates the model
 
 ---
 

@@ -1,0 +1,87 @@
+---
+title: "Income Predictions Dashboard"
+runtime: shiny
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: fill
+    source_code: https://github.com/gfilla/PredictingIncomeDashboard
+
+
+    
+---
+
+```{r setup, include=FALSE}
+
+# install_config.r
+
+```
+
+Predictive Model Evaluation
+=====================================
+
+Row  {.sidebar data-width=350}
+-----------------------------------------------------------------------
+
+### Demographic Information for Prediction
+
+```{r}
+
+#getInput_scoreModel.r
+
+
+```
+
+Row {data-height=150}
+-----------------------------------------------------------------------
+
+### Predicted Class (Income in USD)
+
+```{r}
+
+
+#valueBox1.r
+
+
+
+```
+
+
+### Probability of predicted class
+
+```{r}
+
+#valueBox2.r
+
+
+
+```
+
+Row {data-height=100}
+-----------------------------------------------------------------------
+
+```{r}
+
+#selectVar.r
+
+```
+
+
+Row {data-height=700}
+-----------------------------------------------------------------------
+
+### Distribution of Input Features
+
+```{r}
+
+#plotlyHist.r
+
+```
+
+### JSON Returned from WML API
+
+```{r}
+
+#jsonOutput.r
+
+```
